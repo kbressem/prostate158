@@ -1,0 +1,112 @@
+debug: False
+overwrite: False # overwrite outputs of last run if run_id was not changed
+ndim: 3
+run_id: tumor
+out_dir: output
+model_dir: models
+log_dir: logs
+seed: 42
+device: 'cuda:1'
+data:
+  data_dir: prostate158
+  train_csv: prostate158/train.csv
+  valid_csv: prostate158/valid.csv
+  test_csv: prostate158/test.csv
+  # col names of the image and label files. Pass multiple names as list
+  image_cols: [t2, adc, dwi]
+  label_cols: adc_tumor_reader1
+  train: True
+  valid: True
+  test: False
+  dataset_type: persistent
+  cache_dir: /tmp/monai-cache
+  batch_size: 1
+transforms:
+  # apply multiple transforms to the input. Comment out if a transform should not be applied
+  # all arguments for specific transformes are passed as keyword arguments directly to the function
+  prob: 0.175 # independent probability for each transform to be applied
+  # base transforms
+  spacing: [0.5, 0.5, 0.5]
+  orientation: RAS
+  # imaging specific augmentations
+  rand_bias_field:
+    degree: 10
+    coeff_range: [0.0, 0.01]
+  rand_gaussian_smooth:
+    sigma_x: [0.25, 1.5]
+    sigma_y: [0.25, 1.5]
+    sigma_z: [0.25, 1.5]
+  rand_gibbs_nose:
+    alpha: [0.5, 1]
+  # affine transformation
+  rand_affine:
+    rotate_range: 5
+    shear_range: 0.5
+    translate_range: 25
+  rand_rotate90:
+    spatial_axes: [0,1]
+  rand_rotate:
+    range_x: 0.1
+    range_y: 0.1
+    range_z: 0.1
+  rand_elastic:
+    sigma_range: [0.5,1.5]
+    magnitude_range: [0.5, 1.5]
+    rotate_range: 5
+    shear_range: 0.5
+    translate_range: 25
+  rand_zoom:
+    min: 0.9
+    max: 1.1
+  # resize and crop
+  # use either `rand_crop_pos_neg_label` or `rand_spatial_crop_samples`
+  # rand_crop_pos_neg_label:
+  # spatial_size: [96, 96, 96]
+  # pos: 2
+  # neg: 1
+  # num_samples: 4
+  rand_spatial_crop_samples:
+     roi_size: [96, 96, 96]
+     num_samples: 8
+  # intensitiy
+  gaussian_noise:
+    mean: 0.1
+    std: 0.25
+  shift_intensity:
+    offsets: 0.2
+  gaussian_sharpen:
+    sigma1_x: [0.5, 1.0]
+    sigma1_y: [0.5, 1.0]
+    sigma1_z: [0.5, 1.0]
+    sigma2_x: [0.5, 1.0]
+    sigma2_y: [0.5, 1.0]
+    sigma2_z: [0.5, 1.0]
+    alpha: [10.0, 30.0]
+  adjust_contrast:
+    gamma: 2.0
+model:
+  # create a standard UNet with monai (for quick experiments)
+  # or specify a path to a script with more sophisticated archtitecture
+  out_channels: 2 # one for each label + background
+  channels: [16, 32, 64, 128, 256, 512]
+  strides: [2, 2, 2, 2, 2]
+  num_res_units: 4
+  act: PRELU
+  norm: BATCH
+  dropout: 0.15
+optimizer:
+  Novograd:
+    lr: 0.001
+    weight_decay: 0.01
+    amsgrad: True
+lr_scheduler:
+  OneCycleLR:
+    max_lr: 0.001
+loss:
+  DiceFocalLoss:
+    include_background: False
+    softmax: True
+    to_onehot_y: True
+training:
+  max_epochs: 500
+  early_stopping_patience: 1000
