@@ -1,9 +1,9 @@
 import monai
 import argparse
 
-from prosdata.utils import load_config
-from prosdata.train import SegmentationTrainer
-from prosdata.report import ReportGenerator
+from prostate158.utils import load_config
+from prostate158.train import SegmentationTrainer
+from prostate158.report import ReportGenerator
 
 
 parser = argparse.ArgumentParser(description='Train a segmentation model.')
