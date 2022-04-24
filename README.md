@@ -2,7 +2,7 @@
 > A collection of prostate MR studies with expert annotations
 
 ## What is Prostate158
-Prostate158 is a curated dataset of biparametric prostate MRI images for automatic segmentation of anatomical zones and carcinomatous lesions. Histopathologic confirmation is available for each cancerous lesion. All studies include a T2-weighted (T2W) and diffusion-weighted (DWI) images with apparent diffusion coefficient (ADC) maps. Images in each study were resampled so that orientation, direction, and spacing were the same.
+Prostate158 is a curated dataset of biparametric 3 Tesla prostate MRI images for automatic segmentation of anatomical zones and cancerous lesions. Histopathologic confirmation is available for each cancerous lesion. All studies include a T2-weighted (T2W) and diffusion-weighted (DWI) images with apparent diffusion coefficient (ADC) maps. Images in each study were resampled so that orientation, direction, and spacing were the same.
 
 
 ![image](https://user-images.githubusercontent.com/37253540/159473950-e2e97619-4f66-49c3-894c-9f1a4bf17c00.png)
