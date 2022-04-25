@@ -9,7 +9,9 @@ Prostate158 is a curated dataset of biparametric 3 Tesla prostate MRI images for
 
 ## Accessing the Prostate158 Data Set
 
-The training dataset (139 MRIs) is freely available at https://prostate158.grand-challenge.org/.
+The training dataset (139 MRIs) is freely available at https://prostate158.grand-challenge.org/ or [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6481141.svg)](https://doi.org/10.5281/zenodo.6481141).
+
+
 The test dataset with 19 MRIs remains hidden, but the trained models can be evaluated on grand-challenge.org.
 
 ## Baseline
