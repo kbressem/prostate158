@@ -9,10 +9,11 @@ Prostate158 is a curated dataset of biparametric 3 Tesla prostate MRI images for
 
 ## Accessing the Prostate158 Data Set
 
-The training dataset (139 MRIs) is freely available at https://prostate158.grand-challenge.org/ or [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6481141.svg)](https://doi.org/10.5281/zenodo.6481141).
+The training dataset (139 MRIs) is freely available at [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6481141.svg)](https://doi.org/10.5281/zenodo.6481141).
+
+The test dataset consists of 19 additional MRIs and can be found at [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6592345.svg)](https://doi.org/10.5281/zenodo.6592345)
 
 
-The test dataset with 19 MRIs remains hidden, but the trained models can be evaluated on grand-challenge.org.
 
 ## Baseline
 We have trained U-Net base models for segmentation of the anatomical zones as well as the cancer areas in the prostate images, which can serve as a basis for comparison with future approaches. The weights for the models are available at: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6397057.svg)](https://doi.org/10.5281/zenodo.6397057)  
