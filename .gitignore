@@ -133,3 +133,7 @@ dmypy.json
 .pyre/
 
 data/
+data_zip/
+*.csv
+events.*
+anatomy_*/
