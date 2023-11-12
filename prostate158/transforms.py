@@ -35,7 +35,7 @@ def get_base_transforms(
 )->list:
     
     tfms=[]
-    tfms+=[LoadImaged(keys=config.data.image_cols+config.data.label_cols)]
+    tfms+=[LoadImaged(keys=config.data.image_cols+config.data.label_cols,image_only=False)]
     tfms+=[EnsureChannelFirstd(keys=config.data.image_cols+config.data.label_cols)]
     if config.transforms.spacing:
         from monai.transforms import Spacingd
