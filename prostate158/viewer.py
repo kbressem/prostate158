@@ -87,7 +87,6 @@ class BasicViewer():
     
     def __init__(self, x:torch.Tensor, y=None, prediction:str=None, description: str=None, 
                  figsize=(3, 3), cmap:str='bone'):
-        assert x.ndim == 3, f"x.ndim needs to be equal to but is {x.ndim}"
         if isinstance(y, torch.Tensor): 
             assert x.shape == y.shape, f"Shapes of x {x.shape} and y {y.shape} do not match"
         self.x=x
