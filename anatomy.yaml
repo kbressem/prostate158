@@ -8,10 +8,10 @@ log_dir: logs
 seed: 42
 device: 'cuda:0'
 data:
-  data_dir: prostate158
-  train_csv: prostate158/train.csv
-  valid_csv: prostate158/valid.csv
-  test_csv: prostate158/test.csv
+  data_dir: data
+  train_csv: data/train.csv
+  valid_csv: data/valid.csv
+  test_csv: data/test.csv
   # col names of the image and label files. Pass multiple names as list
   image_cols: t2
   label_cols: t2_anatomy_reader1

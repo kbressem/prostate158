@@ -131,3 +131,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+data/
+data_zip/
+*.csv
+events.*
+anatomy_*/
