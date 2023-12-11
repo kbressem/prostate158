@@ -29,7 +29,7 @@ def load_config(fn: str='config.yaml'):
     return config
 
 def num_workers():
-    return 10 # depending on the machine, check with lscpu
+    return 4 # depending on the machine, check with lscpu
     
 # def num_workers():
 #     "Get max supported workers -2 for multiprocessing"

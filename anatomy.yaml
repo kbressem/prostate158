@@ -1,7 +1,7 @@
 debug: False
 overwrite: False # overwrite outputs of last run if run_id was not changed
 ndim: 3
-run_id: anatomy
+run_id: anatomy_all_sequences
 out_dir: output
 model_dir: models
 log_dir: logs
@@ -13,7 +13,7 @@ data:
   valid_csv: data/valid.csv
   test_csv: data/test.csv
   # col names of the image and label files. Pass multiple names as list
-  image_cols: t2
+  image_cols: ["t2","adc","dwi"]
   label_cols: t2_anatomy_reader1
   train: True
   valid: True
