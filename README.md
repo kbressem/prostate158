@@ -130,3 +130,20 @@ trainer.evaluate(
 ```
 
 See also the [train.ipynb](train.ipynb) notebook for a more detailed tutorial.
+
+# Citations
+@article{PICAI_BIAS,
+    author={Anindo Saha, Jasper J. Twilt, Joeran S. Bosma, Bram van Ginneken, Derya Yakar, Mattijs Elschot, Jeroen Veltman, Jurgen Fütterer, Maarten de Rooij, Henkjan Huisman},
+    title={{Artificial Intelligence and Radiologists at Prostate Cancer Detection in MRI: The PI-CAI Challenge (Study Protocol)}},
+    year={2022},
+    doi={10.5281/zenodo.6667655}
+}
+@article{Bosma23,
+    author={Joeran S. Bosma, Anindo Saha, Matin Hosseinzadeh, Ivan Slootweg, Maarten de Rooij, and Henkjan Huisman},
+    title={Semisupervised Learning with Report-guided Pseudo Labels for Deep Learning–based Prostate Cancer Detection Using Biparametric MRI},
+    journal={Radiology: Artificial Intelligence},
+    pages={e230031},
+    year={2023},
+    doi={10.1148/ryai.230031},
+    publisher={Radiological Society of North America}
+}
